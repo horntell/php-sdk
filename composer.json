@@ -1,0 +1,20 @@
+{
+    "name": "horntell/php-sdk",
+    "description": "Horntell SDK for PHP",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Mohit Mamoria",
+            "email": "mohit.mamoria@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Horntell\\": "src/Horntell/"
+        }
+    }
+}
