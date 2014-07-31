@@ -1,5 +1,6 @@
 vendor/
 composer.lock
 composer.phar
+.sketches
 .DS_Store
 Thumbs.db
