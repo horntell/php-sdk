@@ -1,4 +1,4 @@
-<?php namespace Horntell\Request;
+<?php namespace Horntell;
 
 use Horntell\App;
 use GuzzleHttp\Client as Guzzle;
