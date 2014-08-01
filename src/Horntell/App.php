@@ -1,4 +1,4 @@
-<?php namespace Horntell\App;
+<?php namespace Horntell;
 
 abstract class App {
 
