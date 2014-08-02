@@ -20,4 +20,14 @@ class Profile {
 	{
 		return $this->request->send('POST', '/profiles', $profile);
 	}
+
+	public function update($uid, $profile)
+	{
+		return $this->request->send('PUT', "/profiles/$uid", $profile);
+	}
+
+	public function delete($uid)
+	{
+		return $this->request->send('DELETE', "/profiles/$uid");
+	}
 }
