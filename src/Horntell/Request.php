@@ -14,7 +14,10 @@ class Request {
 			'base_url' => App::$base,
 			'defaults' => [
 				'auth' => [App::$key, App::$secret],
-				'headers' => ['Accept' => 'application/vnd.horntell.' . App::$version . '+json']
+				'headers' => [
+					'Accept' => 'application/vnd.horntell.' . App::$version . '+json',
+					'Content-Type' => 'application/json'
+				]
 			]
 		]);
 	}
@@ -23,7 +26,7 @@ class Request {
 	{
 		try
 		{
-			$request = $this->client->createRequest($method, $endpoint, ['body' => $data]);
+			$request = $this->client->createRequest($method, $endpoint, ['body' => json_encode($data)]);
 			return $this->client->send($request);
 		}
 		catch(GuzzleRequestException $e)
