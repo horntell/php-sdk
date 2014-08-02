@@ -2,6 +2,7 @@
 
 use Horntell\App;
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 
 class Request {
 
@@ -20,7 +21,14 @@ class Request {
 
 	public function send($method, $endpoint, $data = [])
 	{
-		$request = $this->client->createRequest($method, $endpoint, $data);
-		return $this->client->send($request);
+		try
+		{
+			$request = $this->client->createRequest($method, $endpoint, ['body' => $data]);
+			return $this->client->send($request);
+		}
+		catch(GuzzleRequestException $e)
+		{
+			return $e->getResponse();
+		}
 	}
 }
