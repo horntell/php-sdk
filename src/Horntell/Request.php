@@ -1,7 +1,7 @@
 <?php namespace Horntell;
 
 use GuzzleHttp\Client as Guzzle;
-use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\Exception as GuzzleExceptions;
 
 class Request {
 
@@ -28,7 +28,7 @@ class Request {
 			$request = $this->client->createRequest($method, $endpoint, ['body' => json_encode($data)]);
 			return new Response($this->client->send($request));
 		}
-		catch(GuzzleRequestException $e)
+		catch(GuzzleExceptions\RequestException $e)
 		{
 			return $this->handleError($e);
 		}
@@ -66,8 +66,32 @@ class Request {
 				break;
 
 			default:
-				throw new Errors\Error($body['error']['message'], $body['error']['code'], $body['error']['type']);
+				return $this->handleUnknownError($e);
+		}
+	}
+
+	private function handleUnknownError($e)
+	{
+		$response = $e->getResponse();
+		$body = $response->json();
+
+		// we are using floor to round off to the lower end
+		// eg. floor(420 / 100) === 4
+		switch(floor($response->getStatusCode() / 100))
+		{
+			// client error
+			case 4:
+				throw new Errors\InvalidRequestError($body['error']['message'], $body['error']['code'], $body['error']['type']);
 				break;
+
+			// server error
+			case 5:
+				throw new Errors\ServiceError($body['error']['message'], $body['error']['code'], $body['error']['type']);
+				break;
+
+			// very generic error
+			default:
+				throw new Errors\Error($body['error']['message'], $body['error']['code'], $body['error']['type']);
 		}
 	}
 }
