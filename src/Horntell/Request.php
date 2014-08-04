@@ -36,7 +36,7 @@ class Request {
 
 	private function handleError($e)
 	{
-		if(  $e->hasResponse())
+		if( ! $e->hasResponse())
 		{
 			throw new Errors\NetworkError;
 		}
@@ -50,7 +50,7 @@ class Request {
 				break;
 
 			case 401:
-				throw new Errors\UnauthenticatedError($body['error']['message'], $body['error']['code'], $body['error']['type']);
+				throw new Errors\AuthenticationError($body['error']['message'], $body['error']['code'], $body['error']['type']);
 				break;
 				
 			case 403:
