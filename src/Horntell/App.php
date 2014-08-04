@@ -64,6 +64,16 @@ abstract class App {
 	}
 
 	/**
+	 * Sets the base URL for the API to use
+	 * 
+	 * @param string $base
+	 */
+	public static function setBase($base)
+	{
+		self::$base = $base;
+	}
+
+	/**
 	 * Returns the base URL for API
 	 * 
 	 * @return string
@@ -71,6 +81,16 @@ abstract class App {
 	public function getBase()
 	{
 		return self::$base;
+	}
+
+	/**
+	 * Sets the version of API to use
+	 * 
+	 * @param string $version
+	 */
+	public static function setVersion($version)
+	{
+		self::$version = $version;
 	}
 
 	/**
