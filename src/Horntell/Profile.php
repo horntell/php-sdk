@@ -1,7 +1,5 @@
 <?php namespace Horntell;
 
-use Horntell\Request;
-
 class Profile {
 
 	protected $request;
