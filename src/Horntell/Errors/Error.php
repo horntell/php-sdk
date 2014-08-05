@@ -5,12 +5,34 @@ use Horntell\Response;
 
 class Error extends Exception {
 
+	/**
+	 * The error code
+	 * 
+	 * @var null|number
+	 */
 	protected $code;
 
+	/**
+	 * The type of error
+	 *
+	 * @var string|null
+	 */
 	protected $type;
 
+	/**
+	 * The human friendly error message
+	 *
+	 * @var string
+	 */
 	protected $message;
 
+	/**
+	 * Constructor
+	 *
+	 * @param string $message
+	 * @param number|null $code
+	 * @param string|null $type
+	 */
 	public function __construct($message, $code, $type)
 	{
 		$this->message = $message;
@@ -18,6 +40,11 @@ class Error extends Exception {
 		$this->type = $type;
 	}
 
+	/**
+	 * Gets the type of error
+	 *
+	 * @return string|null
+	 */
 	public function getType()
 	{
 		return $this->type;
