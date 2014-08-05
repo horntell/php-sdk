@@ -28,6 +28,16 @@ class Response {
 	}
 
 	/**
+	 * Gets the original response
+	 *
+	 * @return GuzzleHttp\Message\Response
+	 */
+	public function getOriginal()
+	{
+		return $this->response
+	}
+
+	/**
 	 * Gets the parsed JSON body
 	 *
 	 * @return array|null (Null in case of No Content)
@@ -35,5 +45,15 @@ class Response {
 	public function getBody()
 	{
 		return $this->body;
+	}
+
+	/**
+	 * Gets the HTTP Status Code
+	 *
+	 * @return number
+	 */
+	public function getStatusCode()
+	{
+		return $this->response->getStatusCode();
 	}
 }
