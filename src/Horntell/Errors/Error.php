@@ -49,4 +49,9 @@ class Error extends Exception {
 	{
 		return $this->type;
 	}
+
+	/**
+	 * getMessage() and getCode() are final methods on the parent class,
+	 * hence there is no need to define them here.
+	 */
 }
