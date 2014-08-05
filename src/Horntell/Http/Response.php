@@ -1,4 +1,4 @@
-<?php namespace Horntell;
+<?php namespace Horntell\Http;
 
 class Response {
 

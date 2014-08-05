@@ -1,5 +1,6 @@
-<?php namespace Horntell;
+<?php namespace Horntell\Http;
 
+use Horntell\App, Horntell\Errors;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception as GuzzleExceptions;
 

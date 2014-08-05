@@ -6,7 +6,7 @@ class Activity {
 
 	public function __construct()
 	{
-		$this->request = new Request;
+		$this->request = new Http\Request;
 	}
 
 	public function create($uid, $activity)

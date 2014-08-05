@@ -6,7 +6,7 @@ class Horn {
 
 	public function __construct()
 	{
-		$this->request = new Request;
+		$this->request = new Http\Request;
 	}
 
 	public function toProfile($uid, $horn)
