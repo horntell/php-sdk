@@ -51,4 +51,4 @@ Horntell\App::init('YOUR_APP_KEY', 'YOUR_APP_SECRET');
 
 ## Documentation
 
-Please see [http://docs.horntell.com/api](http://docs.horntell.com/api) for up-to-date documentation.
+Please see [http://docs.horntell.com/api](http://docs.horntell.com/api/?php) for up-to-date documentation.
