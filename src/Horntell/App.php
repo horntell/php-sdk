@@ -21,7 +21,7 @@ abstract class App {
 	 * 
 	 * @var string
 	 */
-	public static $base = 'http://api.horntell.com';
+	public static $base = 'https://api.horntell.com';
 
 	/**
 	 * The version of API to use
