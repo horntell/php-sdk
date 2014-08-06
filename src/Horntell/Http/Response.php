@@ -34,7 +34,7 @@ class Response {
 	 */
 	public function getOriginal()
 	{
-		return $this->response
+		return $this->response;
 	}
 
 	/**
