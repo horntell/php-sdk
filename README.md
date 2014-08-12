@@ -52,3 +52,7 @@ Horntell\App::init('YOUR_APP_KEY', 'YOUR_APP_SECRET');
 ## Documentation
 
 Please see [http://docs.horntell.com/api](http://docs.horntell.com/api/?php) for up-to-date documentation.
+
+## Laravel
+
+The composer package to work easily with Laravel will be available soon.
