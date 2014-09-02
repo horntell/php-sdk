@@ -37,7 +37,7 @@ abstract class App {
 	 * @param  string $secret
 	 * @return void
 	 */
-	public function init($key, $secret)
+	public static function init($key, $secret)
 	{
 		self::$key = $key;
 		self::$secret = $secret;
@@ -48,7 +48,7 @@ abstract class App {
 	 * 
 	 * @return string
 	 */
-	public function getKey()
+	public static function getKey()
 	{
 		return self::$key;
 	}
@@ -58,7 +58,7 @@ abstract class App {
 	 * 
 	 * @return string
 	 */
-	public function getSecret()
+	public static function getSecret()
 	{
 		return self::$secret;
 	}
@@ -78,7 +78,7 @@ abstract class App {
 	 * 
 	 * @return string
 	 */
-	public function getBase()
+	public static function getBase()
 	{
 		return self::$base;
 	}
@@ -98,22 +98,8 @@ abstract class App {
 	 * 
 	 * @return string
 	 */
-	public function getVersion()
+	public static function getVersion()
 	{
 		return self::$version;
-	}
-
-	/**
-	 * Allows to call methods just like static methods
-	 *
-	 * @param  string $method
-	 * @param  array $parameters
-	 * @return mixed
-	 */
-	public static function __callStatic($method, $parameters)
-	{
-		$instance = new static;
-
-		return call_user_func_array(array($instance, $method), $parameters);
 	}
 }
