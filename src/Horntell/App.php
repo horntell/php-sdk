@@ -110,7 +110,7 @@ abstract class App {
 	 * @param  array $parameters
 	 * @return mixed
 	 */
-	public function __callStatic($method, $parameters)
+	public static function __callStatic($method, $parameters)
 	{
 		$instance = new static;
 
