@@ -102,4 +102,18 @@ abstract class App {
 	{
 		return self::$version;
 	}
+
+	/**
+	 * Allows to call methods just like static methods
+	 *
+	 * @param  string $method
+	 * @param  array $parameters
+	 * @return mixed
+	 */
+	public function __callStatic($method, $parameters)
+	{
+		$instance = new static;
+
+		return call_user_func_array(array($instance, $method), $parameters);
+	}
 }
