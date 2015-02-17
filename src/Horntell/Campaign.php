@@ -18,7 +18,8 @@ class Campaign {
 	}
 
 	/**
-	 * [Triggers campaign for single profile]
+	 * Triggers campaign for single profile
+	 * 
 	 * @param  string $uid
 	 * @param  string $campaignId
 	 * @return Horntell\Http\Response
@@ -29,7 +30,8 @@ class Campaign {
 	}
 
 	/**
-	 * [Triggers campaign for multiple profiles]
+	 * Triggers campaign for multiple profiles
+	 * 
 	 * @param  array  $profiles
 	 * @param  string $campaignId
 	 * @return Horntell\Http\Response
