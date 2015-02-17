@@ -28,4 +28,18 @@ class Horn {
 	{
 		return $this->request->send('POST', "/profiles/$uid/horns", $horn);
 	}
+
+	/**
+	 * Sends a horn to a multiple profiles
+	 *
+	 * @param  array $horn
+	 * @return Horntell\Http\Response
+	 */
+	public function toProfiles($profiles, $horn)
+	{
+		$horn = array_merge(['profile_uids' => $profiles], $horn);
+
+		return $this->request->send('POST', "/profiles/horns", $horn);
+	}
+
 }
