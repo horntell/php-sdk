@@ -17,7 +17,7 @@ This package depends on Guzzle HTTP client, which has the following additional r
 
 ## Installation
 
-You can install the SDk using Composer. Add this to your `composer.json` file.
+You can install the SDk using Composer. Add this to your `composer.json` file. (Or use `dev-master` for nightly builds).
 
 ```json
 {
