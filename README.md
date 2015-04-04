@@ -22,7 +22,7 @@ You can install the SDk using Composer. Add this to your `composer.json` file. (
 ```json
 {
 	"require": {
-		"horntell/php-sdk": "0.1.*"
+		"horntell/php-sdk": "0.2.*"
 	}
 }
 ```
@@ -42,7 +42,7 @@ You need to `init`ialize the SDK with the app's key and secret, which you can fi
 ```php
 Horntell\App::init('YOUR_APP_KEY', 'YOUR_APP_SECRET');
 (new Horntell\Profile)->create(array(
-	'uid' => 1337,
+	'uid' => '1337',
 	'first_name' => 'John',
 	'last_name' => 'Doe',
 	'signedup_at' => 1383350400
