@@ -48,12 +48,12 @@ class Campaign {
 	/**
 	 * Triggers campaign for single channel
 	 *
-	 * @param  array  $channel
+	 * @param  array  $uid
 	 * @param  string $campaignId
 	 * @param  array  $meta
 	 * @return Horntell\Http\Response
 	 */
-	public function toChannel($channel, $campaignId, $meta = [])
+	public function toChannel($uid, $campaignId, $meta = [])
 	{
 		return $this->request->send('POST', "channels/$uid/campaigns/$campaignId", ['meta' => $meta]);
 	}
