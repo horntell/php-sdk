@@ -3,8 +3,8 @@
 class Event {
 
 	/**
-	 * decodes payload from input
-	 * @return Decoded Payload From Webhook
+	 * Decodes payload from input
+	 * @return array
 	 */
 	public function fromWebhook()
 	{
