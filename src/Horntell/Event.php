@@ -4,6 +4,7 @@ class Event {
 
 	/**
 	 * Decodes payload from input
+	 * 
 	 * @return array
 	 */
 	public function fromWebhook()
