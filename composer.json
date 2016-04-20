@@ -1,7 +1,7 @@
 {
     "name": "horntell/php-sdk",
     "description": "Horntell SDK for PHP",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "license": "MIT",
     "authors": [
         {
