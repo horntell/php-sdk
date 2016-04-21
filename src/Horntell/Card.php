@@ -2,6 +2,8 @@
 
 class Card {
 
+	const DEFAULT_CANVAS = 'default';
+
 	/**
 	 * Instance of Request class
 	 *
@@ -26,6 +28,8 @@ class Card {
 	 */
 	public function toProfile($uid, $card)
 	{
+		$card['canvas'] = isset($card['canvas']) ? $card['canvas'] : self::DEFAULT_CANVAS;
+
 		return $this->request->send('POST', "/profiles/$uid/cards", $card);
 	}
 
@@ -38,6 +42,8 @@ class Card {
 	public function toProfiles($profiles, $card)
 	{
 		$card = array_merge(['profile_uids' => $profiles], $card);
+
+		$card['canvas'] = isset($card['canvas']) ? $card['canvas'] : self::DEFAULT_CANVAS;
 
 		return $this->request->send('POST', "/profiles/cards", $card);
 	}

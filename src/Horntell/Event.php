@@ -3,12 +3,12 @@
 class Event {
 
 	/**
-	 * decodes payload from input
-	 * @return Decoded Payload From Webhook
+	 * Decodes payload from input
+	 * 
+	 * @return array
 	 */
 	public function fromWebhook()
 	{
-		return $_POST['horntell_event'];
-		// return json_decode($_POST['horntell_event'], true);
+		return json_decode($_POST['horntell_event'], true);
 	}
 }
