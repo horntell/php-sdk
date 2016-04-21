@@ -48,4 +48,34 @@ class Card {
 		return $this->request->send('POST', "/profiles/cards", $card);
 	}
 
+
+	/**
+	 * Sends a card to a channel
+	 *
+	 * @param  string $uid
+	 * @param  array $card
+	 * @return Horntell\Http\Response
+	 */
+	public function toChannel($uid, $card)
+	{
+		$card['canvas'] = isset($card['canvas']) ? $card['canvas'] : self::DEFAULT_CANVAS;
+
+		return $this->request->send('POST', "/channels/$uid/cards", $card);
+	}
+
+	/**
+	 * Sends a card to a multiple channels
+	 *
+	 * @param  array $card
+	 * @return Horntell\Http\Response
+	 */
+	public function toChannels($channels, $card)
+	{
+		$card = array_merge(['channel_uids' => $channels], $card);
+
+		$card['canvas'] = isset($card['canvas']) ? $card['canvas'] : self::DEFAULT_CANVAS;
+
+		return $this->request->send('POST', "/channels/cards", $card);
+	}
+
 }
