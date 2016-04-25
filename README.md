@@ -22,7 +22,7 @@ You can install the SDK using Composer. Add this to your `composer.json` file. (
 ```json
 {
 	"require": {
-		"horntell/php-sdk": "0.3.*"
+		"horntell/php-sdk": "0.4.*"
 	}
 }
 ```
