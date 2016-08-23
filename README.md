@@ -22,7 +22,7 @@ You can install the SDK using Composer. Add this to your `composer.json` file. (
 ```json
 {
 	"require": {
-		"horntell/php-sdk": "0.4.*"
+		"horntell/php-sdk": "0.5.*"
 	}
 }
 ```
@@ -34,6 +34,14 @@ Then, pull the package using the following command:
 You will need to include the Composer's autoloader. Simply put this statement in the file you want to use the package.
 
 	require 'vendor/autoload.php';
+
+## Installation (without Composer)
+
+The SDK can be installed without Composer too (v0.5.0 onwards). Head over to the [Releases Page](https://github.com/horntell/php-sdk/releases) and download the ZIP package of the required version. Unzip the downloaded package and include it in your project structure.
+
+In the PHP file, where you want to use Horntell SDK, require the package using the following statement on top of the file:
+
+	require 'path/to/php-sdk/autoloader.php';
 
 ## Getting Started
 
